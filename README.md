@@ -1,0 +1,2 @@
+# WebApplicationASPNetCoreVersion2
+ 
