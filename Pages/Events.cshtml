@@ -1,0 +1,57 @@
+@page
+@model EventsModel
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+<h1>Events</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Organizer</th>
+            <th>Place</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Event)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organizer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @item.Date.ToString("yyyy/MM/dd")
+            </td>
+            <td>
+                @if (item.SpotsAvailable > 0)
+                    {
+                <a asp-page="./JoinEvent" asp-route-id="@item.Id">Join</a>
+                    }
+                    else
+                    {
+                <p>Not available</p>
+                    }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
