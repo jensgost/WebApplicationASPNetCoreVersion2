@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using WebApplicationASPNetCoreVersion2.Data;
 
 namespace WebApplicationASPNetCoreVersion2
 {
@@ -24,6 +26,8 @@ namespace WebApplicationASPNetCoreVersion2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddDbContext<EventDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("EventDbContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
