@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using WebbApplicationASPNetCoreVersion2.Data;
-using WebbApplicationASPNetCoreVersion2.Models;
+using WebApplicationASPNetCoreVersion2.Data;
+using WebApplicationASPNetCoreVersion2.Models;
 
-namespace WebbApplicationASPNetCoreVersion2.Pages
+namespace WebApplicationASPNetCoreVersion2.Pages
 {
     public class JoinEventModel : PageModel
     {
-        private readonly WebbApplicationASPNetCoreVersion2.Data.EventDbContext _context;
+        private readonly WebApplicationASPNetCoreVersion2.Data.EventDbContext _context;
 
-        public JoinEventModel(WebbApplicationASPNetCoreVersion2.Data.EventDbContext context)
+        public JoinEventModel(WebApplicationASPNetCoreVersion2.Data.EventDbContext context)
         {
             _context = context;
         }

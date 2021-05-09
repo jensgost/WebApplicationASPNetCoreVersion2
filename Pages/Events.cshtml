@@ -1,5 +1,5 @@
 @page
-@model EventsModel
+@model WebApplicationASPNetCoreVersion2.Pages.EventsModel
 
 @{
     ViewData["Title"] = "Events";
@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Event)
+        @foreach (var item in Model.Events)
         {
         <tr>
             <td>

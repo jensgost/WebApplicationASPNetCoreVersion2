@@ -5,25 +5,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using EventApp.Data;
-using EventApp.Models;
+using WebApplicationASPNetCoreVersion2.Data;
+using WebApplicationASPNetCoreVersion2.Models;
 
-namespace WebbApplicationASPNetCoreVersion2.Pages
+namespace WebApplicationASPNetCoreVersion2.Pages
 {
     public class EventsModel : PageModel
     {
-        private readonly EventContext _context;
+        private readonly WebApplicationASPNetCoreVersion2.Data.EventDbContext _context;
 
-        public EventsModel(EventContext context)
+        public EventsModel(WebApplicationASPNetCoreVersion2.Data.EventDbContext context)
         {
             _context = context;
         }
 
-        public IList<Event> Event { get; set; }
+        public IList<Event> Events { get; set; }
 
         public async Task OnGetAsync()
         {
-            Event = await _context.Events.Include(e => e.Organizer).ToListAsync();
+            Events = await _context.Events.ToListAsync();
         }
     }
 }
