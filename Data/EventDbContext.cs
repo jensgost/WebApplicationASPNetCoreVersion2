@@ -26,9 +26,9 @@ namespace WebApplicationASPNetCoreVersion2.Data
             Attendee[] attendees = new Attendee[] {
                 new Attendee()
                 {
-                    Name = "Johan       Svensson",
+                    Name = "Johan Svensson",
                     PhoneNumber = "12345",
-                    Email =             "johan.svensson@gmail.com",
+                    Email = "johan.svensson@gmail.com",
                 },
             };
 
